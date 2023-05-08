@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vingo</string>
+    <string name="title_activity_main">Vingo</string>
+    <string name="package_name">vingo.app</string>
+    <string name="custom_url_scheme">vingo.app</string>
+</resources>
