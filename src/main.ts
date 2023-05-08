@@ -28,7 +28,6 @@ import './assets/styles/tailwind.css';
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
-  
 router.isReady().then(() => {
   app.mount('#app');
 });
