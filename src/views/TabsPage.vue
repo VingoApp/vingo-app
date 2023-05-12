@@ -38,12 +38,10 @@
                         </ion-buttons>
                         </ion-toolbar>
                     </ion-header>
-                    <ion-content class="ion-padding">
-                        <ion-list>
-                            <ion-item>
-                                <ion-input label="Text input" placeholder="Enter text"></ion-input>
-                            </ion-item>
-                        </ion-list>
+                    <ion-content>
+                       <div>
+                        
+                       </div>
                     </ion-content>
                 </ion-modal>
 
@@ -76,12 +74,14 @@ import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouter
     IonToolbar,
     IonTitle,
     IonItem,
-    IonInput, IonList } from '@ionic/vue';
+    IonInput, IonList
+} from '@ionic/vue';
 </script>
 
 <script lang="ts">
 
 import { homeOutline, personCircleOutline, notifications, addCircleOutline, funnelOutline } from 'ionicons/icons';
+
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
@@ -109,5 +109,6 @@ export default defineComponent({
             }
         },
     },
+
 });
 </script>
