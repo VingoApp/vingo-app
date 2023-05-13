@@ -21,7 +21,7 @@
                     <div class="h-20 px-5 py-2.5 z-10 w-full absolute top-0 left-0 bg-gradient-to-b from-black to-transparent bg-opacity-50 opacity-70" />
                     <div class="w-full absolute top-0 left-0 px-5 py-2.5 z-20 flex items-center gap-2">
                         <div class="flex items-center gap-2">
-                            <img class="w-8 h-8 min-w-[2rem] rounded-full object-cover" src="https://images1.vinted.net/t/02_02675_wJCLSBTBSMeoAbgDrCv7us26/f800/1658664034.jpeg?s=ec8c2df352653ec06922f79d23792a38c1071e7e" />
+                            <ion-img class="w-8 h-8 min-w-[2rem] rounded-full object-cover overflow-hidden" src="https://images1.vinted.net/t/02_02675_wJCLSBTBSMeoAbgDrCv7us26/f800/1658664034.jpeg?s=ec8c2df352653ec06922f79d23792a38c1071e7e" />
                             <p class="text-[16px] font-medium text-white">Valerie06</p>
                         </div>
                         <p class="text-white text-opacity-80 font-bold -mt-1">|</p>
@@ -36,7 +36,7 @@
                             <p class="text-white">(293)</p>
                         </div>
                     </div>
-                    <img class="h-full w-full object-cover absolute top-0 left-0" src="https://images1.vinted.net/t/03_00dbb_3koAcPA9Juw7SebtvJv7Kn5L/f800/1683216876.jpeg?s=a4654c85409b26f7e877c7f78b2e2ac41c86fe20" />
+                    <ion-img class="h-full w-full object-cover absolute top-0 left-0" src="https://images1.vinted.net/t/03_00dbb_3koAcPA9Juw7SebtvJv7Kn5L/f800/1683216876.jpeg?s=a4654c85409b26f7e877c7f78b2e2ac41c86fe20" />
                 </div>
                 <ion-card-header>
                     <ion-card-title>Ensemble Nike</ion-card-title>
@@ -48,9 +48,15 @@
                     <h2 class="text-lg !font-bold pt-2">Prix: 34,50€</h2>
                 </ion-card-content>
                 <ion-card-content class="pt-0">
-                    <div class="flex gap-2">
-                        <ion-button >Réserver</ion-button>
-                        <ion-button fill="outline" >Voir détails</ion-button>
+                    <div class="flex gap-3">
+                        <div class="ion-activatable ripple-parent h-fit w-full py-3 px-4 justify-center items-center relative rounded-xl overflow-hidden bg-primary text-white">
+                            <p class="text-center !text-base whitespace-nowrap">Réserver</p>
+                            <ion-ripple-effect></ion-ripple-effect>
+                        </div>
+                        <div class="ion-activatable ripple-parent h-fit w-fit min-w-max py-3 px-4 justify-center items-center relative rounded-xl overflow-hidden border-primary border text-primary">
+                            <p class="text-center !text-base whitespace-nowrap">Voir détails</p>
+                            <ion-ripple-effect></ion-ripple-effect>
+                        </div>
                     </div>
                 </ion-card-content>
             </ion-card>
@@ -60,7 +66,7 @@
                     <div class="h-20 px-5 py-2.5 z-10 w-full absolute top-0 left-0 bg-gradient-to-b from-black to-transparent bg-opacity-50 opacity-70" />
                     <div class="w-full absolute top-0 left-0 px-5 py-2.5 z-20 flex items-center gap-2">
                         <div class="flex items-center gap-2">
-                            <img class="w-8 h-8 min-w-[2rem] rounded-full object-cover" src="https://www.vinted.fr/assets/no-photo/user-empty-state.svg" />
+                            <ion-img class="w-8 h-8 min-w-[2rem] rounded-full object-cover overflow-hidden" src="https://www.vinted.fr/assets/no-photo/user-empty-state.svg" />
                             <p class="text-[16px] font-medium text-white">enza.jouet</p>
                         </div>
                         <p class="text-white text-opacity-80 font-bold -mt-1">|</p>
@@ -74,7 +80,7 @@
                             <p class="text-white">(27)</p>
                         </div>
                     </div>
-                    <img class="h-full w-full object-cover absolute top-0 left-0" src="https://images1.vinted.net/t/02_026c9_vxLGB2Pk4NNjM6Voe8NHEYaC/f800/1683481382.jpeg?s=70eedf49de170b1975f23260cb1ca8efda7aecbb" />
+                    <ion-img class="h-full w-full object-cover absolute top-0 left-0" src="https://images1.vinted.net/t/02_026c9_vxLGB2Pk4NNjM6Voe8NHEYaC/f800/1683481382.jpeg?s=70eedf49de170b1975f23260cb1ca8efda7aecbb" />
                 </div>
                 <ion-card-header>
                     <ion-card-title>Ensemble Nike 3-6 mois</ion-card-title>
@@ -86,9 +92,15 @@
                     <h2 class="text-lg !font-bold pt-2">Prix: 10,00€</h2>
                 </ion-card-content>
                 <ion-card-content class="pt-0">
-                    <div class="flex gap-2">
-                        <ion-button >Réserver</ion-button>
-                        <ion-button fill="outline" >Voir détails</ion-button>
+                    <div class="flex gap-3">
+                        <div class="ion-activatable ripple-parent h-fit w-full py-3 px-4 justify-center items-center relative rounded-xl overflow-hidden bg-primary text-white">
+                            <p class="text-center !text-base whitespace-nowrap">Réserver</p>
+                            <ion-ripple-effect></ion-ripple-effect>
+                        </div>
+                        <div class="ion-activatable ripple-parent h-fit w-fit min-w-max py-3 px-4 justify-center items-center relative rounded-xl overflow-hidden border-primary border text-primary">
+                            <p class="text-center !text-base whitespace-nowrap">Voir détails</p>
+                            <ion-ripple-effect></ion-ripple-effect>
+                        </div>
                     </div>
                 </ion-card-content>
             </ion-card>
@@ -97,7 +109,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonCard, IonCardContent, IonButton, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonCard, IonCardContent, IonButton, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonImg } from '@ionic/vue';
 </script>
 
 <script lang="ts">
@@ -109,8 +121,8 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, Ion
         methods: {
             handleRefresh(event: CustomEvent){
                 setTimeout(() => {
-                // Any calls to load data go here
-                event.target.complete();
+                    // Any calls to load data go here
+                    event.target?.complete();
                 }, 2000);
             }
         },

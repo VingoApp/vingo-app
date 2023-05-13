@@ -1,6 +1,4 @@
 export default function authMiddleware(to, from, next) {
-    console.log(to.query.callback)
-
     // Apply callback from auth
     if (to.query.callback) {
         localStorage.setItem('token', to.query.callback);

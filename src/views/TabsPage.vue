@@ -1,5 +1,5 @@
 <template>
-    <ion-page>
+    <ion-page ref="page">
         <ion-tabs>
             <ion-router-outlet></ion-router-outlet>
             <ion-tab-bar slot="bottom">
@@ -18,32 +18,6 @@
 
                     <p>Filtres</p>
                 </ion-tab-button>
-
-                <ion-button color="gray" size="large" id="open-modal" expand="block" fill="clear">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-
-                    <!--     -->
-                </ion-button>
-                <ion-modal ref="modal" trigger="open-modal" @willDismiss="onWillDismiss">
-                    <ion-header>
-                        <ion-toolbar>
-                        <ion-buttons slot="start">
-                            <ion-button @click="cancel()">Cancel</ion-button>
-                        </ion-buttons>
-                        <ion-title>Welcome</ion-title>
-                        <ion-buttons slot="end">
-                            <ion-button :strong="true" @click="confirm()">Confirm</ion-button>
-                        </ion-buttons>
-                        </ion-toolbar>
-                    </ion-header>
-                    <ion-content>
-                       <div>
-                        
-                       </div>
-                    </ion-content>
-                </ion-modal>
 
                 <ion-tab-button tab="notifs" href="/notifications">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -65,49 +39,30 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonButtons,
-    IonButton,
-    IonModal,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonTitle,
-    IonItem,
-    IonInput, IonList
-} from '@ionic/vue';
-</script>
-
 <script lang="ts">
-
-import { homeOutline, personCircleOutline, notifications, addCircleOutline, funnelOutline } from 'ionicons/icons';
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonButtons,
+    IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonItem, IonInput, IonList, IonRange,
+    IonSegment, IonSegmentButton
+} from '@ionic/vue';
+import { homeOutline, personCircleOutline, notifications, addCircleOutline, funnelOutline, flashOffOutline, flashOutline } from 'ionicons/icons';
 
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
+    components: { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonButtons,
+        IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonItem, IonInput, IonList, IonRange,
+        IonSegment, IonSegmentButton
+    },
     data() {
         return {
-            message: 'This modal example uses triggers to automatically open a modal when the button is clicked.',
             homeOutline,
             personCircleOutline,
             notifications,
             addCircleOutline,
-            funnelOutline
+            funnelOutline,
+            flashOffOutline,
+            flashOutline
         };
-    },
-    methods: {
-        cancel() {
-            this.$refs.modal.$el.dismiss(null, 'cancel');
-        },
-        confirm() {
-            const name = this.$refs.input.$el.value;
-            this.$refs.modal.$el.dismiss(name, 'confirm');
-        },
-        onWillDismiss(ev: CustomEvent<OverlayEventDetail>) {
-            if (ev.detail.role === 'confirm') {
-                this.message = `Hello, ${ev.detail.data}!`;
-            }
-        },
     },
 
 });
