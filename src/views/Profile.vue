@@ -11,17 +11,6 @@
                 <ion-title size="large">Mon profil</ion-title>
                 </ion-toolbar>
             </ion-header>
-
-            <ion-list class="theme-list" lines="full">
-          <ion-item>
-            <ion-icon slot="start" icon="moon" class="component-icon component-icon-dark"></ion-icon>
-            <ion-toggle v-model="toggleValue" ionChange="handleToggleChange">
-              Dark Mode
-            </ion-toggle>
-          </ion-item>
-        </ion-list>
-
-
             <ion-card>
                 <ion-card-header>
                     <ion-card-title>{{ user.username }}</ion-card-title>
@@ -29,9 +18,21 @@
                 </ion-card-header>
 
                 <ion-card-content class="flex items-center gap-1">
-                    <h2 class="!font-bold">Votre offre : </h2><ion-chip>Gratuite</ion-chip>
+                    <h2 class="!font-bold">Votre offre : </h2>
+                    <ion-chip v-if="user?.plan == 10" color="warning">Premium</ion-chip>
+                    <ion-chip v-else>Gratuite</ion-chip>
                 </ion-card-content>
             </ion-card>
+            <div class="ion-padding flex flex-col gap-3">
+                <div class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden bg-green-500 text-white">
+                    <p class="text-center !text-base">Changer d'offre</p>
+                    <ion-ripple-effect></ion-ripple-effect>
+                </div>
+                <div @click="logout()" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden bg-red-500 text-white">
+                    <p class="text-center !text-base">Se déconnecter</p>
+                    <ion-ripple-effect></ion-ripple-effect>
+                </div>
+            </div>
 
            <!--  <ion-card>
                 <ion-content>
@@ -50,41 +51,39 @@
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip, IonList, IonRippleEffect } from '@ionic/vue';
+import { toastController } from '@ionic/vue';
 import NoResult from '@/components/NoResult.vue';
 import { getUser } from '../mixins/user.js'
 import { defineComponent } from 'vue';
 import { ref } from 'vue';
 
 export default defineComponent({
-    components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip },
-    setup() {
-        const toggleValue = ref(false);
-
-        const handleToggleChange = () => {
-        console.log('Toggle value:', toggleValue.value);
-        }
-
-        return {
-            toggleValue,
-            handleToggleChange,
-        }
-    },
+    components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip, IonRippleEffect },
     data() {
         return {
             user: {}
         }
     },
     methods: {
-        toggleDarkMode() {
-            console.log('dark')
-            document.body.classList.toggle('dark');
+        async presentToast(message:any) {
+            const toast = await toastController.create({
+                message: message,
+                duration: 1500,
+                position: 'top',
+            });
+
+            await toast.present();
+        },
+        logout() {
+            window.localStorage.removeItem('token')
+            window.location.reload()
         }
     },
     async mounted() {
         this.user = await getUser()
-        console.log(this.user)
-    },
+        if (!this.user?.id) return await this.presentToast("Une erreur s'est produite.")
+    }
 });
 </script>
 
