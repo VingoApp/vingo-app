@@ -20,10 +20,15 @@
 
             <ion-card-content>
                 Sweat / Pull / Polo
-                <div class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList['ralph_lauren_vetement']" @click="_addFilter('ralph_lauren_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
+                <div v-else @click="_removeFilter('ralph_lauren_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-red-500 text-white">
+                    <p class="text-center !text-base">Désactiver</p>
+                    <ion-ripple-effect></ion-ripple-effect>
+                </div>
+
             </ion-card-content>
         </ion-card>
         <ion-card>
@@ -162,3 +167,46 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonCard, IonCardContent, IonRippleEffect, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
 import NoResult from '@/components/NoResult.vue';
 </script>
+
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { toastController } from '@ionic/vue';
+import { addFilter, removeFilter } from '../mixins/filters.js'
+import { getUser } from '@/mixins/user.js';
+export default defineComponent({
+    data() {
+        return {
+            comboList: [],
+            addFilter: addFilter,
+            removeFilter: removeFilter
+        }
+    },
+    methods: {
+        async presentToast(message:any) {
+            const toast = await toastController.create({
+                message: message,
+                duration: 1500,
+                position: 'top',
+            });
+
+            await toast.present();
+        },
+        async _addFilter(id:any){
+            let user = await addFilter(id)
+            if (!user) return await this.presentToast("Une erreur s'est produite.")
+        },
+        async _removeFilter(id:any){
+            let user = await removeFilter(id)
+            if (!user) return await this.presentToast("Une erreur s'est produite.")
+        }
+    },
+    async mounted() {
+        let user = await getUser()
+        if (!user) return await this.presentToast("Une erreur s'est produite.")
+        this.comboList = user.comboId
+        console.log(this.comboList)
+    },
+});
+</script>
+
