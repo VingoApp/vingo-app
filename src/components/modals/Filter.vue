@@ -46,8 +46,6 @@ export default defineComponent({
 
             await toast.present();
         },
-        
-        
     },
     mounted() {
         this.presentingElement = this.$refs.page

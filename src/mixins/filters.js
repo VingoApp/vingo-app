@@ -1,10 +1,10 @@
-
-export async function addFilter(id) {
-    let response = await fetch(import.meta.env.VITE_API_URL + '/filters/add?comboName='+id, {
+export async function addFilter(combo) {
+    let response = await fetch(import.meta.env.VITE_API_URL + '/filters/add?combo='+JSON.stringify(combo), {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token')
-        }
+        },
+        body: JSON.stringify(combo)
     }).catch(error => {
         return {}
     })

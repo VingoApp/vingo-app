@@ -2,17 +2,17 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Notifications</ion-title>
+        <ion-title>Guides</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Notifications</ion-title>
+          <ion-title size="large">Guides</ion-title>
         </ion-toolbar>
       </ion-header>
 
-      <NoResult name="Aucune notification" description="Rien à signaler pour le moment." />
+      <NoResult name="Aucun guide" description="Les guides arrivent bientôt." />
     </ion-content>
   </ion-page>
 </template>

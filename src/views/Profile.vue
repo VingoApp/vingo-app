@@ -59,7 +59,7 @@ import { defineComponent } from 'vue';
 import { ref } from 'vue';
 
 export default defineComponent({
-    components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip, IonRippleEffect },
+    components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip, IonRippleEffect, NoResult },
     data() {
         return {
             user: {}

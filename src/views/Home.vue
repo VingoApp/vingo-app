@@ -84,7 +84,6 @@ export default defineComponent({
     methods: {
         handleRefresh(event: CustomEvent){
             setTimeout(async () => {
-                // Any calls to load data go here
                 this.feed = await getUserFeed()
                 event.target?.complete();
             }, 2000);
@@ -92,7 +91,6 @@ export default defineComponent({
     },
     async mounted() {
         this.feed = await getUserFeed()
-        console.log(this.feed)
     },
 });
 </script>
