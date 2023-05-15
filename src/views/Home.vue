@@ -45,7 +45,7 @@
 
                 <ion-card-content class="pb-3">
                     <!-- <p>Ensemble Nike, le sweat est une taille s et le jogging une taille m, en bon état général...</p> -->
-                    <h2 class="text-lg !font-semibold">Prix: {{ item.price }}€ (Frais: {{ item.service_fee }}€)</h2>
+                    <h2 class="text-lg !font-semibold">Prix: {{ item.price }}€ (Frais: ~{{ item.service_fee }}€)</h2>
                 </ion-card-content>
                 <ion-card-content class="pt-0">
                     <div class="flex gap-3">
@@ -60,12 +60,15 @@
                     </div>
                 </ion-card-content>
             </ion-card>
+            <NoResult v-if="feed.length == 0" name="Aucun article trouvé" :description="`Si vous n'avez pas de filtres, 
+            créez-en un !`" />
         </ion-content>
     </ion-page>
 </template>
 
 <script setup lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonCard, IonCardContent, IonButton, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonImg, IonRippleEffect } from '@ionic/vue';
+import NoResult from '@/components/NoResult.vue';
 </script>
 
 <script lang="ts">

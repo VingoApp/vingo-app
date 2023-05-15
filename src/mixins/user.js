@@ -21,6 +21,6 @@ export async function getUserFeed() {
         return []
     })
     response = await response.json()
-    if (!response?.feed) return []
+    if (!response?.feed || response?.feed?.success == false) return []
     return response?.feed
 }

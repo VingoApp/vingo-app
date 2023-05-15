@@ -1,6 +1,6 @@
 
 export async function addFilter(id) {
-    let response = await fetch(import.meta.env.VITE_API_URL + '/filters/add?comboId='+id, {
+    let response = await fetch(import.meta.env.VITE_API_URL + '/filters/add?comboName='+id, {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -14,7 +14,7 @@ export async function addFilter(id) {
 }
 
 export async function removeFilter(id) {
-    let response = await fetch(import.meta.env.VITE_API_URL + '/filters/remove?comboId='+id, {
+    let response = await fetch(import.meta.env.VITE_API_URL + '/filters/remove?comboName='+id, {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token')

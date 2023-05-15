@@ -62,7 +62,7 @@
       IonTitle,
       IonSearchbar,
       IonToolbar,
-    },
+      },
     setup(props, { emit }) {
       const filteredItems = ref([...props.items]);
       const workingSelectedValues = ref([...props.selectedItems]);
