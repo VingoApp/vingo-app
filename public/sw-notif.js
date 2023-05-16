@@ -10,8 +10,8 @@ self.addEventListener("push", (event) => {
 });
 
 self.addEventListener("notificationclick", (event) => {
-  event.notification.close();
-  event.waitUntil(openUrl("https://vingo.app/home"));
+    event.notification.close();
+    event.waitUntil(openUrl(event.notification.data.url));
 });
 
 
