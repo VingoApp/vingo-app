@@ -10,20 +10,20 @@
 
             <div class="!overflow-y-scroll h-fit" v-if="os == 'ios'">
                 <p class="text-primary text-xl font-medium pb-3">Étape n°1</p>
-                <img src="/how_it_works/ios/1.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
+                <img src="how_it_works/ios/1.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
                 <p class="text-primary text-xl font-medium pb-3">Étape n°2</p>
-                <img src="/how_it_works/ios/2.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
+                <img src="how_it_works/ios/2.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
                 <p class="text-primary text-xl font-medium pb-3">Étape n°3</p>
-                <img src="/how_it_works/ios/3.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
+                <img src="how_it_works/ios/3.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
                 <p class="text-dark dark:text-white text-2xl font-medium pb-3 w-full text-center pt-5">Et voilà ! 🎉</p>
             </div>
             <div v-else>
                 <p class="text-primary text-xl font-medium pb-3">Étape n°1</p>
-                <img src="/how_it_works/ios/1.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
+                <img src="how_it_works/ios/1.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
                 <p class="text-primary text-xl font-medium pb-3">Étape n°2</p>
-                <img src="/how_it_works/ios/2.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
+                <img src="how_it_works/ios/2.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
                 <p class="text-primary text-xl font-medium pb-3">Étape n°3</p>
-                <img src="/how_it_works/ios/3.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
+                <img src="how_it_works/ios/3.PNG" class="w-full mb-5 rounded-xl border border-light dark:border-secondary"/>
                 <p class="text-dark dark:text-white text-2xl font-medium pb-3 w-full text-center pt-5">Et voilà ! 🎉</p>
             </div>
 
