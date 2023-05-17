@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
         meta: { requiresAuth: true },
     },
     {
+        path: '/tuto',
+        name: 'Tuto',
+        component: () => import('@/views/howitworks.vue'),
+    },
+    {
         path: '/',
         component: TabsPage,
         meta: { requiresAuth: true },

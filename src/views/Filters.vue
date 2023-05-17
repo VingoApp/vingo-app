@@ -20,7 +20,7 @@
 
             <ion-card-content>
                 Sweat / Pull / Polo
-                <div v-if="!comboList.find(c=>c?.name=='ralph_lauren_vetement')" id="open-ralph_lauren_vetement" @click="selectCombo('ralph_lauren_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='ralph_lauren_vetement')" id="open-ralph_lauren_vetement" @click="selectCombo('ralph_lauren_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -73,7 +73,7 @@
 
             <ion-card-content>
                 Sweat / Pull / Jogging / Survêtements / Parachute Pants / Cargo
-                <div v-if="!comboList.find(c=>c?.name=='nike_vetement')" id="open-nike_vetement" @click="selectCombo('nike_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='nike_vetement')" id="open-nike_vetement" @click="selectCombo('nike_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -126,7 +126,7 @@
 
             <ion-card-content>
                 Sweat / Pull / Polo
-                <div v-if="!comboList.find(c=>c?.name=='tommy_hilfiger_vetement')" id="open-tommy_hilfiger_vetement" @click="selectCombo('tommy_hilfiger_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='tommy_hilfiger_vetement')" id="open-tommy_hilfiger_vetement" @click="selectCombo('tommy_hilfiger_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -179,7 +179,7 @@
 
             <ion-card-content>
                 Sweat / Pull / Polo / Survêtements / Jogging
-                <div v-if="!comboList.find(c=>c?.name=='lacoste_vetement')" id="open-lacoste_vetement" @click="selectCombo('lacoste_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='lacoste_vetement')" id="open-lacoste_vetement" @click="selectCombo('lacoste_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -232,7 +232,7 @@
 
             <ion-card-content>
                 Sweat / Pull / Blouson
-                <div v-if="!comboList.find(c=>c?.name=='the_north_face_vetement')" id="open-the_north_face_vetement" @click="selectCombo('the_north_face_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='the_north_face_vetement')" id="open-the_north_face_vetement" @click="selectCombo('the_north_face_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -285,7 +285,7 @@
 
             <ion-card-content>
                 Sweat / Tee-shirt / Jogging/ Survêtements
-                <div v-if="!comboList.find(c=>c?.name=='jodarn_vetement')" id="open-jodarn_vetement" @click="selectCombo('jodarn_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='jodarn_vetement')" id="open-jodarn_vetement" @click="selectCombo('jodarn_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -338,7 +338,7 @@
 
             <ion-card-content>
                 Tee-shirt / Sweat / Pull / Jogging
-                <div v-if="!comboList.find(c=>c?.name=='stussy_vetement')" id="open-stussy_vetement" @click="selectCombo('stussy_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='stussy_vetement')" id="open-stussy_vetement" @click="selectCombo('stussy_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -391,7 +391,7 @@
 
             <ion-card-content>
                 Sweat / Pull / Jogging / Survêtements
-                <div v-if="!comboList.find(c=>c?.name=='trapstar_vetement')" id="open-trapstar_vetement" @click="selectCombo('trapstar_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='trapstar_vetement')" id="open-trapstar_vetement" @click="selectCombo('trapstar_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -444,7 +444,7 @@
 
             <ion-card-content>
                 Tee-shirt / Sweat / Pull / Jogging / Pantalon
-                <div v-if="!comboList.find(c=>c?.name=='corteiz_vetement')" id="open-corteiz_vetement" @click="selectCombo('corteiz_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='corteiz_vetement')" id="open-corteiz_vetement" @click="selectCombo('corteiz_vetement')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
@@ -497,7 +497,7 @@
 
             <ion-card-content>
                 Nike / Jordan / Converse / Lacoste / Yeezy
-                <div v-if="!comboList.find(c=>c?.name=='sneakers')" id="open-sneakers" @click="selectCombo('sneakers')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
+                <div v-if="!comboList?.find(c=>c?.name=='sneakers')" id="open-sneakers" @click="selectCombo('sneakers')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
