@@ -66,8 +66,8 @@ export default defineComponent({
     },
     methods: {
         async askPermission() {
-            if (!("Notification" in window)) return
-            if (window?.Notification?.permission == "granted") return
+            /* if (!("Notification" in window)) return
+            if (window?.Notification?.permission == "granted") return */
             Notification.requestPermission().then(async (permission) => {
                 if (permission == "granted") {
                     await this.registerServiceWorker();
