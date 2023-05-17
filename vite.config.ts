@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     legacy(),
     VitePWA({
+        includeAssets: ["favicon.png", "public/*"],
         registerType: 'autoUpdate',
 /*         devOptions: {
             enabled: true
