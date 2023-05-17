@@ -1,6 +1,7 @@
 <template>
     <ion-page>
-        <div class="w-full h-screen flex flex-col items-center py-20 px-5">
+        <toast-install />
+        <div class="w-full h-screen flex flex-col items-center py-24 px-5">
             <div class="w-full flex flex-col items-center gap-2">
                 <img class="w-24" src="/logo/logo.png" />
                 <h1 class="text-md text-neutral-500 dark:text-neutral-400 font-medium">Trouvez les meilleurs articles</h1>
@@ -58,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+import ToastInstall from '@/components/ToastInstall.vue';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
 </script>
 
