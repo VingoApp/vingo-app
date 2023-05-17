@@ -615,7 +615,8 @@ export default defineComponent({
             let parent = this.$refs[name].$el
             let priceDownInput = parent.querySelector('input[name=priceDown]')
             let priceUpInput = parent.querySelector('input[name=priceUp]')
-            if (!name || !priceDownInput.value || !priceUpInput.value) return await this.presentToast("Une erreur s'est produite.")
+            if (!name) return await this.presentToast("Une erreur s'est produite.")
+            if (!priceDownInput.value || !priceUpInput.value) return await this.presentToast("Veuillez remplir les champs")
             let user = await addFilter({ name, priceDown: priceDownInput.value, priceUp: priceUpInput.value })
             if (!user) return await this.presentToast("Une erreur s'est produite.")
             this.$refs[name].$el.dismiss(null, 'cancel');

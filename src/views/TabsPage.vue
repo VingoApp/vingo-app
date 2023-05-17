@@ -1,5 +1,6 @@
 <template>
     <ion-page ref="page">
+        <toast-install />
         <ion-tabs>
             <ion-router-outlet></ion-router-outlet>
             <ion-tab-bar slot="bottom">
@@ -41,6 +42,7 @@
 </template>
 
 <script lang="ts">
+import ToastInstall from '@/components/ToastInstall.vue';
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonButtons,
     IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonItem, IonInput, IonList, IonRange,
     IonSegment, IonSegmentButton
@@ -51,7 +53,8 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
     components: { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonButtons,
         IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonItem, IonInput, IonList, IonRange,
-        IonSegment, IonSegmentButton
+        IonSegment, IonSegmentButton,
+        ToastInstall
     },
     data() {
         return {
