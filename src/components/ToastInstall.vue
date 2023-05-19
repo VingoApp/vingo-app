@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="w-full h-fit fixed top-0 left-0 flex items-center gap-2 bg-white dark:bg-black z-[99] py-4 shadow-lg px-4 justify-between">
+  <div v-if="show" class="w-full h-fit fixed top-0 left-0 flex items-center gap-2 bg-white dark:bg-black z-[99] py-4 shadow-sm px-4 justify-between">
     <div class="flex items-center gap-2">
         <svg @click="close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 opacity-50">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
