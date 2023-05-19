@@ -15,7 +15,7 @@
         <ion-card id="ralph_lauren_vetement">
             <ion-card-header>
                 <ion-card-title>Ralph Lauren</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
@@ -68,7 +68,7 @@
         <ion-card id="nike_vetement">
             <ion-card-header>
                 <ion-card-title>Nike</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
@@ -121,7 +121,7 @@
         <ion-card id=tommy_hilfiger_vetement>
             <ion-card-header>
                 <ion-card-title>Tommy Hilfiger</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
@@ -174,7 +174,7 @@
         <ion-card id="lacoste_vetement">
             <ion-card-header>
                 <ion-card-title>Lacoste</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
@@ -227,7 +227,7 @@
         <ion-card id="the_north_face_vetement">
             <ion-card-header>
                 <ion-card-title>The North Face</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
@@ -280,7 +280,7 @@
         <ion-card id="jodarn_vetement">
             <ion-card-header>
                 <ion-card-title>Jordan</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
@@ -333,7 +333,7 @@
         <ion-card id="stussy_vetement">
             <ion-card-header>
                 <ion-card-title>Stussy</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
@@ -386,7 +386,7 @@
         <ion-card id="trapstar_vetement">
             <ion-card-header>
                 <ion-card-title>Trapstar</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
@@ -439,7 +439,7 @@
         <ion-card id="corteiz_vetement">
             <ion-card-header>
                 <ion-card-title>Corteiz</ion-card-title>
-                <ion-card-subtitle>👚 vêtements — (M/L)</ion-card-subtitle>
+                <ion-card-subtitle>👚 vêtements — (S/M/L)</ion-card-subtitle>
             </ion-card-header>
 
             <ion-card-content>
