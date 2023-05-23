@@ -1,16 +1,19 @@
 <template>
   <ion-page id="page">
-    <ion-header>
+    <ion-header translucent>
       <ion-toolbar>
         <ion-title>Mes filtres</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true">
+    <ion-content :fullscreen="false">
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Mes filtres</ion-title>
         </ion-toolbar>
       </ion-header>
+      <ion-refresher slot="fixed" @ionRefresh="handleRefresh($event)">
+            <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
       <ion-list>
         <ion-card id="ralph_lauren_vetement">
             <ion-card-header>
@@ -561,7 +564,7 @@
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonCard, IonCardContent, IonRippleEffect, IonCardHeader, IonCardSubtitle, IonCardTitle, IonModal, IonInput, IonItem, IonSegment, IonSegmentButton, IonLabel, IonButtons, IonButton } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonCard, IonCardContent, IonRippleEffect, IonCardHeader, IonCardSubtitle, IonCardTitle, IonModal, IonInput, IonItem, IonSegment, IonSegmentButton, IonLabel, IonButtons, IonButton, IonRefresher, IonRefresherContent } from '@ionic/vue';
 import NoResult from '@/components/NoResult.vue';
 import FilterModal from '@/components/modals/Filter.vue'
 import { defineComponent } from 'vue';
@@ -570,7 +573,7 @@ import { addFilter, removeFilter } from '../mixins/filters.js'
 import { getUser } from '@/mixins/user.js';
 import { ref, onMounted } from 'vue';
 export default defineComponent({
-    components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonCard, IonCardContent, IonRippleEffect, IonCardHeader, IonCardSubtitle, IonCardTitle, FilterModal, IonModal, IonInput, IonItem, IonSegment, IonSegmentButton, IonLabel, IonButtons, IonButton },
+    components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonCard, IonCardContent, IonRippleEffect, IonCardHeader, IonCardSubtitle, IonCardTitle, FilterModal, IonModal, IonInput, IonItem, IonSegment, IonSegmentButton, IonLabel, IonButtons, IonButton, IonRefresher, IonRefresherContent },
     data() {
         return {
             comboList: [],
@@ -583,6 +586,12 @@ export default defineComponent({
         }
     },
     methods: {
+        handleRefresh(event: CustomEvent){
+            setTimeout(async () => {
+                await this.updateUser()
+                event.target?.complete();
+            }, 2000);
+        },
         async presentToast(message:any) {
             const toast = await toastController.create({
                 message: message,
