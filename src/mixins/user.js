@@ -12,8 +12,8 @@ export async function getUser() {
     return response.data?.user
 }
 
-export async function getUserFeed() {
-    let response = await fetch(import.meta.env.VITE_API_URL + '/feed', {
+export async function getUserFeed(from , to) {
+    let response = await fetch(import.meta.env.VITE_API_URL + `/feed?from=${from || 0}&to=${to || 20}`, {
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token')
         }

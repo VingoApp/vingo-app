@@ -24,10 +24,10 @@
                 </ion-card-content>
             </ion-card>
             <div class="ion-padding flex flex-col gap-3">
-                <div class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden bg-green-500 text-white">
+                <a href="https://www.patreon.com/Vingo" target="_blank" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden bg-green-500 text-white">
                     <p class="text-center !text-base">Changer d'offre</p>
                     <ion-ripple-effect></ion-ripple-effect>
-                </div>
+                </a>
                 <div @click="logout()" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden bg-red-500 text-white">
                     <p class="text-center !text-base">Se déconnecter</p>
                     <ion-ripple-effect></ion-ripple-effect>
