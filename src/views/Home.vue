@@ -49,12 +49,12 @@
                 </ion-card-content>
                 <ion-card-content class="pt-0">
                     <div class="flex gap-3">
-                        <a :href="`https://www.vinted.fr/items/${item.itemId}/want_it/new?button_name=receiver_id=${item?.sellerId}`" target="_blank" class="ion-activatable ripple-parent h-fit w-full py-3 px-4 justify-center items-center relative rounded-xl overflow-hidden bg-primary text-white">
-                            <p class="text-center !text-base whitespace-nowrap">Réserver</p>
+                        <a :href="`https://www.vinted.fr/items/${item.itemId}`" target="_blank" class="ion-activatable ripple-parent h-fit w-full py-3 px-4 justify-center items-center relative rounded-xl overflow-hidden bg-primary text-white">
+                            <p class="text-center !text-base whitespace-nowrap">Voir l'article</p>
                             <ion-ripple-effect></ion-ripple-effect>
                         </a>
-                        <a :href="'https://www.vinted.fr/items/'+item.itemId" target="_blank" class="ion-activatable ripple-parent h-fit w-fit min-w-max py-3 px-4 justify-center items-center relative rounded-xl overflow-hidden border-primary border text-primary">
-                            <p class="text-center !text-base whitespace-nowrap">Voir détails</p>
+                        <a :href="`https://www.vinted.fr/transaction/buy/new?source_screen=item&transaction%5Bitem_id%5D=${item.itemId}`" target="_blank" class="ion-activatable ripple-parent h-fit w-fit min-w-max py-3 px-4 justify-center items-center relative rounded-xl overflow-hidden border-primary border text-primary">
+                            <p class="text-center !text-base whitespace-nowrap">Acheter</p>
                             <ion-ripple-effect></ion-ripple-effect>
                         </a>
                     </div>
