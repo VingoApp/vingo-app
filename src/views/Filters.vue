@@ -1,6 +1,6 @@
 <template>
-  <ion-page id="page">
-    <ion-header translucent>
+  <ion-page ref="page">
+    <ion-header class="header-patch">
       <ion-toolbar>
         <ion-title>Mes filtres</ion-title>
       </ion-toolbar>
@@ -31,7 +31,7 @@
                     <p class="text-center !text-base">Désactiver</p>
                     <ion-ripple-effect></ion-ripple-effect>
                 </div>
-                <ion-modal animated="true" ref="ralph_lauren_vetement" trigger="open-ralph_lauren_vetement" @willDismiss="onWillDismiss" :presentingElement="presentingElement">
+                <ion-modal animated="true" ref="ralph_lauren_vetement" trigger="open-ralph_lauren_vetement" @willDismiss="onWillDismiss" :presenting-element="presentingElement">
                     <ion-header>
                         <ion-toolbar>
                         <ion-buttons slot="start">
@@ -499,7 +499,7 @@
             </ion-card-header>
 
             <ion-card-content>
-                Nike / Jordan / Converse / Lacoste / Yeezy
+                Nike / Jordan / Lacoste / Yeezy
                 <div v-if="!comboList?.find(c=>c?.name=='sneakers')" id="open-sneakers" @click="selectCombo('sneakers')" class="ion-activatable ripple-parent h-fit w-full py-3 px-6 justify-center items-center relative rounded-xl overflow-hidden mt-3 bg-green-500 text-white">
                     <p class="text-center !text-base">Activer</p>
                     <ion-ripple-effect></ion-ripple-effect>
@@ -643,7 +643,7 @@ export default defineComponent({
     },
     async mounted() {
         await this.updateUser()
-        this.presentingElement = window.document.getElementById('page')
+        this.presentingElement = this.$refs.page.$el;
         if (this.$route.hash) {
             let scrollItem = this.$refs[this.$route.hash.replace('#', '')]?.$el
         }

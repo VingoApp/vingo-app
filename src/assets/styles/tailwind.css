@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-patch {
+  background-color: #fff;
+  border: 0px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header-patch {
+    background-color: #000;
+  }
+}

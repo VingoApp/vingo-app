@@ -1,6 +1,6 @@
 <template>
     <ion-page>
-        <ion-header translucent>
+        <ion-header class="header-patch">
             <ion-toolbar>
                 <ion-title>Annonces</ion-title>
             </ion-toolbar>
@@ -11,7 +11,7 @@
                     <ion-title size="large">Annonces</ion-title>
                 </ion-toolbar>
             </ion-header>
-            <ion-searchbar class="-my-2" placeholder="Rechercher"></ion-searchbar>
+            <ion-searchbar class="-my-2" id="searchbar" :debounce="1000" @ionInput="handleSearch($event)" placeholder="Rechercher"></ion-searchbar>
             <ion-refresher slot="fixed" @ionRefresh="handleRefresh($event)">
                 <ion-refresher-content></ion-refresher-content>
             </ion-refresher>
@@ -20,9 +20,9 @@
                     <div class="relative h-60 w-full">
                         <div class="w-full absolute top-0 left-0 px-5 py-2.5 z-20 flex items-center gap-2">
                             <div class="flex items-center gap-2">
-                                <div class="text-[16px] font-medium text-white w-8 h-8 min-w-[2rem] rounded-full animate-pulse bg-neutral-400 dark:bg-neutral-600" />
+                                <div class="text-[16px] font-medium text-white w-8 h-8 min-w-[2rem] rounded-full animate-pulse bg-neutral-200 dark:bg-neutral-600" />
                                 <!-- <ion-img class="w-8 h-8 min-w-[2rem] rounded-full object-cover overflow-hidden bg-slate-400" src="https://ionicframework.com/docs/img/demos/avatar.svg" /> -->
-                                <div class="text-[16px] font-medium text-white w-32 h-4 rounded-full animate-pulse bg-neutral-400 dark:bg-neutral-600" />
+                                <div class="text-[16px] font-medium text-white w-32 h-4 rounded-full animate-pulse bg-neutral-200 dark:bg-neutral-600" />
                             </div>
                             <!-- <p class="text-white text-opacity-80 font-bold -mt-1">|</p>
                                 <div class="flex items-center gap-1">
@@ -39,25 +39,25 @@
                         <div class="animate-pulse bg-neutral-300 dark:bg-neutral-900 h-full w-full object-cover absolute top-0 left-0" />
                     </div>
                     <ion-card-header>
-                        <div class="text-[16px] font-medium text-white w-52 h-8 rounded-full animate-pulse bg-neutral-400 dark:bg-neutral-600" />
-                        <div class="text-[16px] font-medium text-white w-32 h-4 rounded-full animate-pulse bg-neutral-400 dark:bg-neutral-600 !mb-2" />
+                        <div class="text-[16px] font-medium text-white w-52 h-8 rounded-full animate-pulse bg-neutral-200 dark:bg-neutral-600" />
+                        <div class="text-[16px] font-medium text-white w-32 h-4 rounded-full animate-pulse bg-neutral-200 dark:bg-neutral-600 !mb-2" />
                     </ion-card-header>
 
                     <ion-card-content class="pb-3">
                         <!-- <p>Ensemble Nike, le sweat est une taille s et le jogging une taille m, en bon état général...</p> -->
-                        <div class="text-[16px] font-medium text-white w-36 h-4 rounded-full animate-pulse bg-neutral-400 dark:bg-neutral-600 !mb-2" />
+                        <div class="text-[16px] font-medium text-white w-36 h-4 rounded-full animate-pulse bg-neutral-200 dark:bg-neutral-600 !mb-2" />
                     </ion-card-content>
                     <ion-card-content class="pt-0">
                         <div class="flex gap-3">
-                            <div class="text-[16px] font-medium text-white w-full h-12 rounded-xl animate-pulse bg-neutral-400 dark:bg-neutral-600 !mb-2" />
-                            <div class="text-[16px] font-medium text-white w-32 h-12 rounded-xl animate-pulse bg-neutral-400 dark:bg-neutral-600 !mb-2" />
+                            <div class="text-[16px] font-medium text-white w-full h-12 rounded-xl animate-pulse bg-neutral-200 dark:bg-neutral-600 !mb-2" />
+                            <div class="text-[16px] font-medium text-white w-32 h-12 rounded-xl animate-pulse bg-neutral-200 dark:bg-neutral-600 !mb-2" />
                         </div>
                     </ion-card-content>
                 </ion-card>
             </div>
             <ion-list>
                 <ion-card v-for="item in feed" :key="item.id">
-                    <div class="relative h-60 w-full">
+                    <div class="relative h-72 w-full">
                         <div class="h-20 px-5 py-2.5 z-10 w-full absolute top-0 left-0 bg-gradient-to-b from-black to-transparent bg-opacity-50 opacity-70" />
                         <div class="w-full absolute top-0 left-0 px-5 py-2.5 z-20 flex items-center gap-2">
                             <div class="flex items-center gap-2">
@@ -124,7 +124,8 @@ export default defineComponent({
         return {
             feed: [],
             index: 0,
-            loading: true
+            loading: true,
+            getUserFeed: getUserFeed
         }
     },
     methods: {
@@ -135,10 +136,19 @@ export default defineComponent({
             }, 2000);
         },
         async ionInfinite(event: CustomEvent) {
+            let searchInput = document.querySelector('ion-searchbar')
             this.index = this.index + 20
-            this.feed = this.feed.concat(await getUserFeed(this.index, this.index + 20))
+            this.feed = this.feed.concat(await getUserFeed(searchInput?.value || null, this.index, this.index + 20))
             setTimeout(() => event.target?.complete(), 500);
-        }
+        },
+        handleSearch(event: CustomEvent) {
+            this.loading = true
+            getUserFeed(event.target?.value, 0, 20).then((result:any) => {
+                console.log(result)
+                this.feed = result
+                this.loading = false
+            })
+        },
     },
     async mounted() {
         this.index = 0

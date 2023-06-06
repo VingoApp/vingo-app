@@ -1,6 +1,6 @@
 <template>
     <ion-page>
-        <ion-header>
+        <ion-header class="header-patch">
             <ion-toolbar>
                 <ion-title>Mon profil</ion-title>
             </ion-toolbar>
