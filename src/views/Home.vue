@@ -129,9 +129,10 @@ export default defineComponent({
         }
     },
     methods: {
-        handleRefresh(event: CustomEvent){
+        handleRefresh(event: CustomEvent) {
+            let searchInput = document.querySelector('ion-searchbar')
             setTimeout(async () => {
-                this.feed = await getUserFeed()
+                this.feed = await getUserFeed(searchInput?.value || null)
                 event.target?.complete();
             }, 2000);
         },
